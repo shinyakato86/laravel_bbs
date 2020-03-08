@@ -1,0 +1,85 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+
+
+// ===========================================================================
+//  ブレークポイント
+// ===========================================================================
+$breakpoint: (
+	s: 'only screen and (max-width: 767px)',
+	m: 'only screen and (max-width: 1024px)',
+	l: 'only screen and (max-width: 1280px)',
+	m-min: 'only screen and (min-width: 768px)',
+	p: 'print'
+);
+
+@mixin mq($bp) {
+	@media #{map-get($breakpoint, $bp)} {
+		@content;
+	}
+}
+
+/* ===========================================================================
+  base
+============================================================================= */
+html {
+	font-size: 62.5%;
+	line-height: 1.68;
+}
+
+body {
+	font-size: 1.4rem;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+	color: #333;
+	word-wrap: break-word;
+	overflow-wrap : break-word;
+}
+.header {
+	background-color: #343a40;
+}
+.haader_inner {
+	width: 96%;
+	max-width: 940px;
+	margin: 0 auto;
+}
+.contentArea {
+    width: 96%;
+    max-width: 940px;
+    margin: 40px auto 60px;
+}
+.heading01_link {
+	font-size: 1.6rem;
+	padding: 15px 0;
+	display: block;
+	color: #fff;
+	&:hover {
+		color: #fff;
+		text-decoration: none;
+	}
+}
+.heading02 {
+    font-size: 2.0rem;
+    margin-bottom: 20px;
+}
+.message {
+	margin-top: 30px;
+}
+.message_item {
+    border-width: 1px;
+    display: inline-block;
+    border-style: none solid solid none;
+    border-color: #ddd;
+    background-color: #efefef;
+	padding: 10px;
+	& + & {
+		margin-top: 15px;
+	}
+	&:last-of-type {
+		margin-bottom: 30px;
+	}
+}
